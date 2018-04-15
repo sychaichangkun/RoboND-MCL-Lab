@@ -197,7 +197,9 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
     //Draw the robot, landmarks, particles and resampled particles on a graph
 
     //Graph Format
+    cout <<"1"<< endl;
     plt::title("MCL, step " + to_string(step));
+    cout <<"2"<< endl;
     plt::xlim(0, 100);
     plt::ylim(0, 100);
 
@@ -206,6 +208,7 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
         plt::plot({ p[i].x }, { p[i].y }, "go");
     }
 
+    cout <<"3"<< endl;
     //Draw resampled particles in yellow
     for (int i = 0; i < n; i++) {
         plt::plot({ pr[i].x }, { pr[i].y }, "yo");
@@ -216,11 +219,15 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
         plt::plot({ landmarks[i][0] }, { landmarks[i][1] }, "ro");
     }
 
+    cout <<"4"<< endl;
     //Draw robot position in blue
     plt::plot({ robot.x }, { robot.y }, "bo");
 
+    cout <<"5"<< endl;
     //Save the image and close the plot
     plt::save("./Images/Step" + to_string(step) + ".png");
+
+    cout <<"6"<< endl;
     plt::clf();
 }
 

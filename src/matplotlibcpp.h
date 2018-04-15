@@ -858,7 +858,7 @@ namespace matplotlibcpp {
 		PyTuple_SetItem(args, 0, pyfilename);
 
 		PyObject* res = PyObject_CallObject(detail::_interpreter::get().s_python_function_save, args);
-		if (!res) throw std::runtime_error("Call to save() failed.");
+                if (!res) throw std::runtime_error("Call to save() failed.");
 
 		Py_DECREF(args);
 		Py_DECREF(res);
